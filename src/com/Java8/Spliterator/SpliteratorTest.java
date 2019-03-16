@@ -17,6 +17,9 @@ public class SpliteratorTest {
         al.add(-3); 
         al.add(-4); 
         al.add(5); 
+        al.add(6); 
+        al.add(7); 
+        al.add(9); 
               
         // Obtain a Stream to the array list. 
         Stream<Integer> str = al.stream(); 
@@ -32,16 +35,18 @@ public class SpliteratorTest {
           
         // hasCharacteristics and characteristics method 
         System.out.println(splitr1.hasCharacteristics(splitr1.characteristics())); 
+        System.out.println(splitr1.characteristics()); 
           
         System.out.println("Content of arraylist :"); 
         // forEachRemaining method     
         splitr1.forEachRemaining((n) -> System.out.println(n)); 
           
         // Obtaining another  Stream to the array list. 
+        //Creating Spliterator from Stream  
         Stream<Integer> str1 = al.stream(); 
         splitr1 = str1.spliterator(); 
           
-        // trySplit() method 
+        // trySplit() method it will split the Spliterator into two
         Spliterator<Integer> splitr2 = splitr1.trySplit(); 
           
         // If splitr1 could be split, use splitr2 first. 
@@ -51,8 +56,9 @@ public class SpliteratorTest {
         } 
   
         // Now, use the splitr 
-        System.out.println("\nOutput from splitr1: "); 
-        splitr1.forEachRemaining((n) -> System.out.println(n)); 
+        System.out.println("Remaining elements from splitr1: "); 
+        while (splitr1.tryAdvance((n) -> System.out.println(n))) {
+        }
               
     } 
 
