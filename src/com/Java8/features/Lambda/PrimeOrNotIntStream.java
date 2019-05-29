@@ -3,10 +3,10 @@ package com.Java8.features.Lambda;
 import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
-public class LambdaExamples {
+public class PrimeOrNotIntStream {
 	//Traditional approach
 	private static boolean isPrimeOldway(int number) {		
-		if(number < 2) return false;
+		if(number < 2) return true;
 		for(int i=2; i<number; i++){
 			if(number % i == 0) return false;
 		}
@@ -33,19 +33,19 @@ public class LambdaExamples {
 	
 	public static void main(String args[]){
 		
-		LambdaExamples c = new LambdaExamples();
-		
+		PrimeOrNotIntStream c = new PrimeOrNotIntStream();
+		int n = 67676777;
 		long startTime = System.nanoTime();
-			System.out.println(c.isPrimeOldway(677));
-		System.out.println("Execution time :"+ (System.nanoTime() - startTime));
+			System.out.println(c.isPrimeOldway(n));
+		System.out.println("Execution time oldwayS :"+ (System.nanoTime() - startTime));
 		
 		startTime = System.nanoTime();
-			System.out.println(c.isPrime1way(677));
-			System.out.println("Execution time :"+ (System.nanoTime() - startTime));
+			System.out.println(c.isPrime1way(n));
+			System.out.println("Execution time using IntStream :"+ (System.nanoTime() - startTime));
 		
 		startTime = System.nanoTime();
-			System.out.println(c.isPrime2way(677));
-			System.out.println("Execution time :"+ (System.nanoTime() - startTime));
+			System.out.println(c.isPrime2way(n));
+			System.out.println("Execution time using IntPredicate :"+ (System.nanoTime() - startTime));
 		
 		
 		

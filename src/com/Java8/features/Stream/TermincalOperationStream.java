@@ -86,9 +86,13 @@ public class TermincalOperationStream {
         
         // Using forEach(Consumer action) to 
         // print the elements of stream in reverse order 
-        list.stream().sorted(Comparator.reverseOrder()).forEach(System.out::println); 
+        list.stream()
+        .sorted(Comparator.reverseOrder())
+        .forEach(System.out::println); 
         				//or
-        List<Integer> naturalSortLt = list.stream().sorted().collect(Collectors.toList());
+        List<Integer> naturalSortLt = list.stream()
+        		.sorted()
+        		.collect(Collectors.toList());
         System.out.println(naturalSortLt);
         
         // Creating a Stream of Strings 

@@ -23,6 +23,9 @@ public class OptionalClassDemo {
 			System.out.print(word);
 		} else
 			System.out.println("word is null");
+	
+	//java 9 introduce ifPresentorElse()
+		//checkNull.ifPresentOrElse(words[5].toLowerCase().toString()::println, System.out.print("Word Is null"););
 	}
 
 }

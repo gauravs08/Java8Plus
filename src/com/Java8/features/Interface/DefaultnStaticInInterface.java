@@ -18,7 +18,7 @@ public class DefaultnStaticInInterface implements Interface1, Interface2 {
 	
 	//MyClass won't compile without having it's own log() implementation 
 	//Since both interface has log method as default compiler would not know which method to call
-	//so need to overrride this method if only one interface is implemented then no need to override the log
+	//so need to override this method if only one interface is implemented then no need to override the log
 	@Override
 	public void log(String str) {
 		System.out.println("MyClass logging::"+str);

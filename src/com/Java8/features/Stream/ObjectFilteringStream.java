@@ -18,7 +18,7 @@ public class ObjectFilteringStream {
                 .findAny()                                      // If 'findAny' then return found
                 .orElse(null);                                  // If not found, return null
 
-        System.out.println(result1);
+        System.out.println(result1.getName());
         
         Person result2 = persons.stream()
                 .filter(x -> "ahmook".equals(x.getName()))
