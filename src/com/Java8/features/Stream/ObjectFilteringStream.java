@@ -12,7 +12,29 @@ public class ObjectFilteringStream {
                 new Person("jack", 20),
                 new Person("lawrence", 40)
         );
+        
+        List<Person> persons1 = persons;
 
+        if(persons == persons1) {
+        	System.out.println("both are equal");
+        	System.out.println(persons.hashCode()+ " = "+persons1.hashCode());
+            
+        }else {
+        	System.out.println("both are diff");
+        	System.out.println(persons.hashCode()+ " = "+persons1.hashCode());
+        }
+        
+        String s1 = new String("abc");
+        String s2 = s1;// new String("abc");
+        
+        if(s1 == s2) {
+        	System.out.println("both are same");
+        	
+        }else {
+        	System.out.println("both are diff");
+        	
+        }
+        
         Person result1 = persons.stream()                        // Convert to steam
                 .filter(x -> "jack".equals(x.getName()))        // we want "jack" only
                 .findAny()                                      // If 'findAny' then return found
